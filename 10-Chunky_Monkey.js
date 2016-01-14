@@ -4,19 +4,12 @@ Write a function that splits an array (first argument) into groups the length of
 
 function chunk(arr, size) {
   // Break it up.
-   var newArray = [];
-  for(var i=0;i<arr.length;i+=size) {
-    var subArray = [];
-    for(var j=0;j<size;j++) {
-      if(arr[i+j] !== undefined) {
-        subArray.push(arr[i+j]);
-      }
-    }
-    newArray.push(subArray);
+  new_arr = [];
+  for (i=0; i<arr.length; i+= size){
+    
+    new_arr.push(arr.slice(i,i+size));
   }
-  arr = newArray;
-  console.log(arr);
-  return arr;
+  return new_arr;
 }
 
 chunk(["a", "b", "c", "d"], 2);
